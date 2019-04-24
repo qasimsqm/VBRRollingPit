@@ -31,8 +31,10 @@ extension CGFloat {
     @IBInspectable var marginTop : CGFloat = 0
     
     
-    let marginLeft : CGFloat = 15
-    let marginRight : CGFloat = 15
+    @IBInspectable var marginLeft : CGFloat = 15
+    @IBInspectable var marginRight : CGFloat = 15
+    
+    @IBInspectable var animationSpring : CGFloat = 15
     
     
     let pitCornerRad : CGFloat = 10
@@ -234,7 +236,7 @@ extension CGFloat {
         itemView.alpha = 0
         itemView.isHidden = false
 
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(400) , execute: {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(100) , execute: {
             UIView.animate(withDuration: 0.4) {
                 itemView.alpha = 1
             }
